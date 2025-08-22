@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sodex Landing Page
 
-## Getting Started
+这是一个使用 Next.js 14 + TypeScript + Tailwind CSS 构建的现代化前端项目。
 
-First, run the development server:
+## 🚀 技术栈
+
+- **Next.js 14** - React 框架，使用 App Router
+- **TypeScript** - 类型安全的 JavaScript
+- **Tailwind CSS** - 实用优先的 CSS 框架
+- **ESLint** - 代码质量检查
+
+## 🎨 主题颜色
+
+项目配置了完整的主题颜色系统：
+
+### 主要颜色 (Primary)
+- 蓝色系：`primary-50` 到 `primary-950`
+- 默认主色：`primary-500` (#3b82f6)
+
+### 次要颜色 (Secondary)
+- 灰色系：`secondary-50` 到 `secondary-950`
+- 默认次色：`secondary-500` (#64748b)
+
+### 强调颜色 (Accent)
+- 紫色系：`accent-50` 到 `accent-950`
+- 默认强调色：`accent-500` (#d946ef)
+
+## 📁 项目结构
+
+```
+src/
+├── app/                 # App Router 页面
+│   ├── globals.css     # 全局样式
+│   ├── layout.tsx      # 根布局
+│   └── page.tsx        # 首页
+├── components/         # 可重用组件
+│   └── Button.tsx     # 按钮组件
+└── ...
+```
+
+## 🛠️ 开发
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 启动开发服务器
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 [http://localhost:3000](http://localhost:3000) 查看结果。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 构建生产版本
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+### 启动生产服务器
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎯 特性
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- ✅ Next.js 14 App Router
+- ✅ TypeScript 支持
+- ✅ Tailwind CSS 配置
+- ✅ 响应式设计
+- ✅ 深色模式支持
+- ✅ 自定义主题颜色
+- ✅ 组件化开发
+- ✅ ESLint 代码检查
 
-## Deploy on Vercel
+## 📝 使用示例
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 使用主题颜色
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```tsx
+// 使用主要颜色
+<div className="bg-primary text-primary-foreground">
+  主要内容
+</div>
+
+// 使用次要颜色
+<div className="bg-secondary text-secondary-foreground">
+  次要内容
+</div>
+
+// 使用强调颜色
+<div className="bg-accent text-accent-foreground">
+  强调内容
+</div>
+```
+
+### 使用按钮组件
+
+```tsx
+import Button from '@/components/Button';
+
+// 主要按钮
+<Button variant="primary">主要按钮</Button>
+
+// 次要按钮
+<Button variant="secondary">次要按钮</Button>
+
+// 强调按钮
+<Button variant="accent">强调按钮</Button>
+```
+
+## 🌙 深色模式
+
+项目支持系统深色模式，会自动根据用户系统设置切换主题。
+
+## �� 许可证
+
+MIT License
