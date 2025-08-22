@@ -1,0 +1,8 @@
+{
+    "components": {
+        "LandingButton": {
+            "name": "LandingButton",
+            "path": "src/components/LandingButton.tsx"
+        }
+    }
+}
