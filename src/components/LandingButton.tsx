@@ -7,7 +7,7 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-const LandingButton: React.FC<ButtonProps> = ({
+const LadingButton: React.FC<ButtonProps> = ({
   text,
   onClick,
   disabled = false,
@@ -30,4 +30,4 @@ const LandingButton: React.FC<ButtonProps> = ({
   );
 };
 
-export default LandingButton;
+export default LadingButton;
