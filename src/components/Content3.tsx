@@ -2,15 +2,7 @@ import React from 'react';
 
 const Content3: React.FC = () => {
   return (
-    <section
-      className="bg-primary flex flex-col items-center justify-center px-4 py-16 md:py-20"
-      style={{
-        backgroundImage: `url('/img/home/content3.webp')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
+    <section className="bg-transparent flex flex-col items-center justify-center px-4 py-16 md:py-20">
       {/* Title */}
       <h2 className="text-white font-latoRegular text-3xl md:text-5xl lg:text-6xl font-normal mb-8 text-center">
         The SoDEX Stack

@@ -66,15 +66,7 @@ const Content4: React.FC = () => {
   ];
 
   return (
-    <section
-      className="bg-primary flex flex-col items-center justify-center px-4 py-16 md:py-20"
-      style={{
-        backgroundImage: `url('/img/home/content4.webp')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
+    <section className="bg-transparent flex flex-col items-center justify-center px-4 py-16 md:py-20">
       <div className="w-full max-w-6xl mx-auto">
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
