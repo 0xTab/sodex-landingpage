@@ -8,31 +8,19 @@ import Content5 from "@/components/Content5";
 
 export default function Home() {
   return (
-    <div 
-      className="min-h-screen bg-primary"
-      style={{
-        backgroundImage: `url('/img/home/content1.webp')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed'
-      }}
-    >
+    <div className="min-h-screen bg-primary">
       {/* Header */}
       <Header />
       
-      {/* Main Content Container */}
-      <main className="relative">
-        {/* Hero Section */}
-        <Hero />
-        
-        {/* Content Sections */}
-        <Content1 />
-        <Content2 />
-        <Content3 />
-        <Content4 />
-        <Content5 />
-      </main>
+      {/* Hero Section */}
+      <Hero />
+      
+      {/* Content Sections */}
+      <Content1 />
+      <Content2 />
+      <Content3 />
+      <Content4 />
+      <Content5 />
     </div>
   );
 }
