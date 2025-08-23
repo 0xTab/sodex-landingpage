@@ -7,7 +7,7 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-const LadingButton: React.FC<ButtonProps> = ({
+const LandingButton: React.FC<ButtonProps> = ({
   text,
   onClick,
   disabled = false,
