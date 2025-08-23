@@ -66,8 +66,8 @@ const Content4: React.FC = () => {
   ];
 
   return (
-    <section 
-      className="min-h-screen bg-primary flex flex-col items-center justify-center px-4 py-20"
+    <section
+      className="bg-primary flex flex-col items-center justify-center px-4 py-16 md:py-20"
       style={{
         backgroundImage: `url('/img/home/content4.webp')`,
         backgroundSize: 'cover',
