@@ -30,4 +30,4 @@ const LandingButton: React.FC<ButtonProps> = ({
   );
 };
 
-export default LadingButton;
+export default LandingButton;
