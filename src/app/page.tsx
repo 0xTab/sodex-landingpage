@@ -1,12 +1,26 @@
-import LandingButton from "@/components/LandingButton";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Content1 from "@/components/Content1";
+import Content2 from "@/components/Content2";
+import Content3 from "@/components/Content3";
+import Content4 from "@/components/Content4";
+import Content5 from "@/components/Content5";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-primary p-8">
-      <div className="max-w-md mx-auto">
-        <h1 className="text-white font-bold  mb-4 text-yellow">Hello World</h1>
-        <LandingButton text="Start Trading" />
-        </div>
+    <div className="min-h-screen bg-primary">
+      {/* Header */}
+      <Header />
+      
+      {/* Hero Section */}
+      <Hero />
+      
+      {/* Content Sections */}
+      <Content1 />
+      <Content2 />
+      <Content3 />
+      <Content4 />
+      <Content5 />
     </div>
-  )
+  );
 }
