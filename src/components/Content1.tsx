@@ -2,8 +2,8 @@ import React from 'react';
 
 const Content1: React.FC = () => {
   return (
-    <section 
-      className="min-h-screen bg-primary flex flex-col items-center justify-center px-4 py-20"
+    <section
+      className="bg-primary flex flex-col items-center justify-center px-4 py-16 md:py-20"
       style={{
         backgroundImage: `url('/img/home/content1.webp')`,
         backgroundSize: 'cover',
