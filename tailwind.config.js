@@ -29,6 +29,7 @@ const config = {
         'gradient-gold': 'linear-gradient(135deg, #FFD64D 0%, #FFAD33 97.6%)',
         'gradient-gold-light': 'linear-gradient(87deg, #F28D00 2.18%, #FFAD33 97.84%)',
         'gradient-gold-180': 'linear-gradient(180deg, #FFD64D 0%, #FFAD33 97.6%)',
+        'gradient-radial': 'radial-gradient(50% 50% at 50% 50%, var(--tw-gradient-stops))',
         'xmas-radial':
           'radial-gradient(238.39% 44.19% at 96.59% 31.25%, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.00) 100%), radial-gradient(182.56% 55.34% at 5.68% 100%, rgba(246, 251, 34, 0.51) 0%, rgba(255, 158, 69, 0.00) 100%), radial-gradient(137.51% 118.3% at 32.95% 0%, rgba(255, 137, 137, 0.92) 21.25%, rgba(255, 169, 106, 0.57) 88.62%), radial-gradient(178.09% 220.16% at 94.89% -132.81%, #FF7A00 67.59%, rgba(255, 199, 0, 0.38) 100%)',
       },
@@ -65,4 +66,3 @@ const config = {
   ],
 };
 export default config;
-
