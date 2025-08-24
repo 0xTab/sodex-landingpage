@@ -15,10 +15,13 @@
         "Content2": {
             "name": "Content2",
             "path": "src/components/Content2.tsx"
+<<<<<<< HEAD
         },
         "Content3": {
             "name": "Content3",
             "path": "src/components/Content3.tsx"
+=======
+>>>>>>> refs/remotes/origin/main
         }
     }
 }
