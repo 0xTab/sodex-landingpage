@@ -3,6 +3,14 @@
         "LandingButton": {
             "name": "LandingButton",
             "path": "src/components/LandingButton.tsx"
+        },
+        "Header": {
+            "name": "Header",
+            "path": "src/components/Header.tsx"
+        },
+        "Content1": {
+            "name": "Content1",
+            "path": "src/components/Content1.tsx"
         }
     }
 }
