@@ -1,122 +1,138 @@
-# Sodex Landing Page
+# SoDEX Landing Page
 
-这是一个使用 Next.js 14 + TypeScript + Tailwind CSS 构建的现代化前端项目。
+这是一个基于Next.js和Tailwind CSS构建的SoDEX项目落地页。
 
-## 🚀 技术栈
-
-- **Next.js 14** - React 框架，使用 App Router
-- **TypeScript** - 类型安全的 JavaScript
-- **Tailwind CSS** - 实用优先的 CSS 框架
-- **ESLint** - 代码质量检查
-
-## 🎨 主题颜色
-
-项目配置了完整的主题颜色系统：
-
-### 主要颜色 (Primary)
-- 蓝色系：`primary-50` 到 `primary-950`
-- 默认主色：`primary-500` (#3b82f6)
-
-### 次要颜色 (Secondary)
-- 灰色系：`secondary-50` 到 `secondary-950`
-- 默认次色：`secondary-500` (#64748b)
-
-### 强调颜色 (Accent)
-- 紫色系：`accent-50` 到 `accent-950`
-- 默认强调色：`accent-500` (#d946ef)
-
-## 📁 项目结构
+## 项目结构
 
 ```
 src/
-├── app/                 # App Router 页面
-│   ├── globals.css     # 全局样式
-│   ├── layout.tsx      # 根布局
-│   └── page.tsx        # 首页
-├── components/         # 可重用组件
-│   └── Button.tsx     # 按钮组件
-└── ...
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+├── components/
+│   ├── Header.tsx          # Header组件
+│   └── LandingButton.tsx   # 按钮组件
 ```
 
-## 🛠️ 开发
+## 组件说明
 
-### 安装依赖
+### Header组件 (`src/components/Header.tsx`)
+
+Header组件是根据Figma设计稿实现的响应式导航栏，包含以下特性：
+
+- **Logo区域**: SoDEX品牌标识和testnet标签
+- **导航菜单**: X(Twitter)、Telegram、Docs三个导航项
+- **行动按钮**: "Start Trading"按钮
+- **响应式设计**: 支持PC和移动端适配
+- **毛玻璃效果**: 使用backdrop-blur实现现代UI效果
+
+#### 特性
+- 完全响应式设计
+- 移动端汉堡菜单
+- 悬停交互效果
+- 使用Tailwind CSS自定义颜色
+- 支持Lato字体
+
+#### 使用方法
+
+```tsx
+import Header from '@/components/Header';
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-primary">
+      <div className="p-8">
+        <Header />
+      </div>
+      {/* 其他内容 */}
+    </div>
+  );
+}
+```
+
+### LandingButton组件 (`src/components/LandingButton.tsx`)
+
+可重用的按钮组件，支持自定义文本和点击事件。
+
+## 技术栈
+
+- **框架**: Next.js 14
+- **样式**: Tailwind CSS
+- **语言**: TypeScript
+- **字体**: Lato, Inter
+
+## 自定义配置
+
+### 颜色配置 (tailwind.config.js)
+
+项目使用自定义颜色配置：
+
+```javascript
+colors: {
+  'white': '#FFFFFF',
+  sosored: '#EB5F31',
+  'primary': '#121212',
+  'button-up': '#18B36B',
+  'brand': '#FF7637',
+  'link': '#9BC4F4',
+  'default': '#444444',
+  "brand-default": "#FF7637",
+}
+```
+
+### 响应式断点
+
+```javascript
+screens: {
+  smaller: { max: '389px' },
+  sm: { max: '599.95px' },
+  md: { max: '959.95px', min: '600px' },
+  lg: { max: '1279.95px', min: '960px' },
+  xl: { min: '1280px' },
+  mobile: { max: '759.99px' },
+  pc: { min: '759.99px' },
+}
+```
+
+## 开发
 
 ```bash
+# 安装依赖
 npm install
-```
 
-### 启动开发服务器
-
-```bash
+# 启动开发服务器
 npm run dev
-```
 
-打开 [http://localhost:3000](http://localhost:3000) 查看结果。
-
-### 构建生产版本
-
-```bash
+# 构建生产版本
 npm run build
 ```
 
-### 启动生产服务器
+## 设计规范
 
-```bash
-npm start
+Header组件严格按照Figma设计稿实现：
+- 最大宽度: 1200px
+- 高度: 56px (h-14)
+- 圆角: 99px
+- 背景: rgba(255, 255, 255, 0.1)
+- 边框: #444444
+- 毛玻璃效果: backdrop-blur-xl
+
+## 组件映射
+
+项目使用`mapping.json`文件管理组件映射关系：
+
+```json
+{
+  "components": {
+    "LandingButton": {
+      "name": "LandingButton",
+      "path": "src/components/LandingButton.tsx"
+    },
+    "Header": {
+      "name": "Header", 
+      "path": "src/components/Header.tsx"
+    }
+  }
+}
 ```
-
-## 🎯 特性
-
-- ✅ Next.js 14 App Router
-- ✅ TypeScript 支持
-- ✅ Tailwind CSS 配置
-- ✅ 响应式设计
-- ✅ 深色模式支持
-- ✅ 自定义主题颜色
-- ✅ 组件化开发
-- ✅ ESLint 代码检查
-
-## 📝 使用示例
-
-### 使用主题颜色
-
-```tsx
-// 使用主要颜色
-<div className="bg-primary text-primary-foreground">
-  主要内容
-</div>
-
-// 使用次要颜色
-<div className="bg-secondary text-secondary-foreground">
-  次要内容
-</div>
-
-// 使用强调颜色
-<div className="bg-accent text-accent-foreground">
-  强调内容
-</div>
-```
-
-### 使用按钮组件
-
-```tsx
-import Button from '@/components/Button';
-
-// 主要按钮
-<Button variant="primary">主要按钮</Button>
-
-// 次要按钮
-<Button variant="secondary">次要按钮</Button>
-
-// 强调按钮
-<Button variant="accent">强调按钮</Button>
-```
-
-## 🌙 深色模式
-
-项目支持系统深色模式，会自动根据用户系统设置切换主题。
-
-## �� 许可证
-
-MIT License
