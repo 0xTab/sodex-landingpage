@@ -19,6 +19,10 @@
         "Content3": {
             "name": "Content3",
             "path": "src/components/Content3.tsx"
+        },
+        "Content4": {
+            "name": "Content4",
+            "path": "src/components/Content4.tsx"
         }
     }
 }
