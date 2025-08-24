@@ -17,6 +17,7 @@ export default function Home() {
         <Content2 />
         <Content3 />
         <Content4 />
+        <Content5 />
         {/* Additional content sections will be added here */}
       </main>
     </div>
