@@ -11,6 +11,10 @@
         "Content1": {
             "name": "Content1",
             "path": "src/components/Content1.tsx"
+        },
+        "Content2": {
+            "name": "Content2",
+            "path": "src/components/Content2.tsx"
         }
     }
 }
