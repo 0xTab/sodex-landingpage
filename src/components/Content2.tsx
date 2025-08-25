@@ -133,7 +133,7 @@ function FeatureCard({ feature }: { feature: typeof features[0] }) {
         <h4 className="text-white mobile:text-base pc:text-xl font-latoRegular mb-1">
           {feature.title}
         </h4>
-        <p className="text-text-secondary-500300 mobile:text-[13px] pc:text-sm font-latoRegular leading-relaxed">
+        <p className="text-secondary mobile:text-[13px] pc:text-sm font-latoRegular leading-relaxed">
           {feature.description}
         </p>
       </div>

@@ -4,7 +4,7 @@ import LandingButton from './LandingButton';
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full mobile:h-[804px]  overflow-hidden">
+    <section className="relative w-full mobile:h-[804px] pc:h-[734px] overflow-hidden pc:pt-[13%]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -17,25 +17,23 @@ export default function HeroSection() {
       </div>
       
       {/* Vision Section Content */}
-      <div className="relative z-10 flex h-full items-center justify-center mobile:px-10 mobile:pt-[220px] pc:px-[120px]">
+      <div className="relative z-10 flex h-full justify-center mobile:px-10 mobile:pt-[220px]">
         <div className="flex w-full mobile:max-w-[313px] pc:max-w-[1200px] flex-col items-center mobile:gap-8 pc:gap-12">
           {/* Logo */}
-          <div className="mobile:block pc:hidden">
-            <Logo size="medium" />
-          </div>
-
+          <Logo size="medium" />
+    
           {/* Main Vision Content */}
-          <div className="flex flex-col items-center mobile:gap-8 pc:gap-12">
+          <div className="flex flex-col w-full items-center mobile:gap-8 pc:gap-[32px]">
             {/* Vision Title */}
             <div className="text-center">
-              <h1 className="text-white mobile:text-[36px] pc:text-5xl font-latoBold leading-normal mobile:max-w-[313px] pc:max-w-4xl mx-auto">
+              <h1 className="text-white mobile:text-[36px] pc:text-[56px] font-latoBold  leading-normal mobile:max-w-[313px] pc:max-w-[700px] mx-auto">
                 Building the Infrastructure for a New Financial Era
               </h1>
             </div>
             
             {/* Vision Subtitle */}
             <div className="text-center">
-              <p className="text-text-secondary-500300 mobile:text-sm pc:text-lg mobile:max-w-[313px] pc:max-w-2xl mx-auto leading-relaxed">
+              <p className="text-secondary mobile:text-sm pc:text-lg mobile:max-w-[313px] pc:max-w-2xl mx-auto leading-relaxed">
                 SoDEX devotes to bridge the global information and asset gap Focused solely on real user needs in the real world.
               </p>
             </div>

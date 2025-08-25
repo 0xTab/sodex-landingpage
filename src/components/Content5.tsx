@@ -199,13 +199,13 @@ export default function Content5() {
           {/* Footer Links */}
           <div className="flex flex-col items-center mobile:gap-4 pc:gap-6 mobile:mt-4 pc:mt-8">
             <div className="flex items-center mobile:gap-4 pc:gap-6">
-              <span className="text-text-secondary-500300 font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors">
+              <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors">
                 WhitePaper
               </span>
-              <span className="text-text-secondary-500300 font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors">
+              <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors">
                 Terms of Service
               </span>
-              <span className="text-text-secondary-500300 font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors">
+              <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors">
                 Privacy Policy
               </span>
             </div>

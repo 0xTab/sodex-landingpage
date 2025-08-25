@@ -53,6 +53,7 @@ const config = {
         'white': '#FFFFFF',
         sosored: '#EB5F31',
         'primary': '#121212',
+        'secondary': '#A3A3A3',
         'button-up': '#18B36B',
         'brand': '#FF7637',
         'link': '#9BC4F4',

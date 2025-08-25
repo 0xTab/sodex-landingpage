@@ -12,7 +12,7 @@ export default function Content4() {
             <h2 className="font-latoBold mobile:text-[28px] pc:text-4xl font-bold text-white">
               The SoDEX Stack
             </h2>
-            <p className="font-latoRegular mobile:text-sm pc:text-xl text-text-secondary-500300">
+            <p className="font-latoRegular mobile:text-sm pc:text-xl text-secondary">
               High-performance, Scalable Blockchain Architecture
             </p>
           </div>

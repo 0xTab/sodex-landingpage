@@ -73,7 +73,7 @@ export default function Content3() {
                     <h3 className="text-white mobile:text-base pc:text-2xl font-latoBold text-center mb-2">
                       Know your investment targets
                     </h3>
-                    <p className="text-text-secondary-500300 mobile:text-xs pc:text-base font-latoRegular text-center">
+                    <p className="text-secondary mobile:text-xs pc:text-base font-latoRegular text-center">
                       via the SoSoValue Research Terminal
                     </p>
                   </div>
@@ -101,7 +101,7 @@ export default function Content3() {
                     <h3 className="text-white mobile:text-base pc:text-2xl font-latoBold text-center mb-2">
                       Invest in quality assets
                     </h3>
-                    <p className="text-text-secondary-500300 mobile:text-xs pc:text-base font-latoRegular text-center">
+                    <p className="text-secondary mobile:text-xs pc:text-base font-latoRegular text-center">
                       via the SoDEX Decentralized Exchange
                     </p>
                   </div>
