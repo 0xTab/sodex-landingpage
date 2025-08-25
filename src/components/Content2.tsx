@@ -130,18 +130,18 @@ export default function Content2() {
               </h2>
             </div>
 
-            {/* Features Layout */}
+            {/* Features Layout - Row arrangement with image in center */}
             <div className="w-full max-w-[1200px] relative">
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mobile:gap-6">
-                {/* Left Column Features */}
-                <div className="flex flex-col gap-8 mobile:gap-6">
+              <div className="flex flex-row items-center justify-between gap-8 mobile:flex-col mobile:gap-6">
+                {/* Left Features */}
+                <div className="flex flex-col gap-6 mobile:gap-4">
                   <FeatureCard feature={features[0]} />
                   <FeatureCard feature={features[1]} />
                 </div>
 
                 {/* Center - Trading Interface */}
-                <div className="lg:col-span-1 flex items-center justify-center">
-                  <div className="relative rounded-lg overflow-hidden shadow-2xl border-2 border-[#393939] max-w-[541px]">
+                <div className="flex items-center justify-center flex-shrink-0">
+                  <div className="relative rounded-lg overflow-hidden shadow-2xl border-2 border-[#393939] max-w-[541px] mobile:max-w-[320px]">
                     <Image
                       src="https://api.builder.io/api/v1/image/assets/TEMP/3376c7a13df1f2b350f73635b5a66efd70fff1bb?width=1083"
                       alt="SoDEX Trading Interface"
@@ -153,8 +153,8 @@ export default function Content2() {
                   </div>
                 </div>
 
-                {/* Right Column Features */}
-                <div className="flex flex-col gap-8 mobile:gap-6">
+                {/* Right Features */}
+                <div className="flex flex-col gap-6 mobile:gap-4">
                   <FeatureCard feature={features[2]} />
                   <FeatureCard feature={features[3]} />
                 </div>
