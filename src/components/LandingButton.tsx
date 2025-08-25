@@ -13,7 +13,7 @@ const LandingButton: React.FC<ButtonProps> = ({
   disabled = false,
 }) => {
   const disabledClasses = disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:bg-brand/90 transition-colors';
-  const baseClasses = 'mobile:h-10 mobile:px-6 mobile:py-2 pc:h-12 pc:px-8 pc:py-3 bg-brand rounded-[999px] inline-flex justify-center items-center gap-2';
+  const baseClasses = 'mobile:py-2 pc:h-12 pc:px-8  bg-brand rounded-[40px] inline-flex justify-center items-center gap-2';
 
   return (
     <button

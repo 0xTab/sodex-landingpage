@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Logo from './Logo';
 import LandingButton from './LandingButton';
 
-export default function Content1() {
+export default function HeroSection() {
   return (
-    <section className="relative w-full mobile:h-[804px] pc:h-[700px] overflow-hidden">
+    <section className="relative w-full mobile:h-[804px]  overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image

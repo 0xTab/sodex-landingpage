@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import Content1 from "@/components/Content1";
+import HeroSection from "@/components/heroSection";
 import Content2 from "@/components/Content2";
 import Content3 from "@/components/Content3";
 import Content4 from "@/components/Content4";
@@ -14,8 +14,18 @@ export default function Home() {
         <Header />
 
         {/* Content Sections */}
-        <main className="relative">
-          <Content1 />
+        <main className="pc:relative mobile:hidden">
+          <HeroSection />
+          <div>
+            <Content2 />
+            <Content3 />
+            <Content4 />
+            <Content5 />
+          </div>
+        </main>
+
+        <main className="pc:hidden mobile:relative">
+          <HeroSection />
           <Content2 />
           <Content3 />
           <Content4 />
