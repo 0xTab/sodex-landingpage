@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import { forwardRef } from 'react';
 
-export default function Content3() {
+const Content3 = forwardRef<HTMLElement>((props, ref) => {
+
   return (
-    <section className="w-full mobile:h-[852px] pc:min-h-[883px] pc:px-[6.5%] pc:py-[6.5%] overflow-hidden bg-gradient-to-b from-primary via-primary/95 to-[#212121]">
+    <section ref={ref}  className="w-full mobile:h-[852px] pc:h-[883px] pc:px-[6.5%] pc:py-[6.5%] overflow-hidden bg-gradient-to-b from-primary via-primary/95 to-[#212121]">
       {/* Infinity Animation */}
       {/* <div className="absolute mobile:left-[-111px] mobile:top-[255px] pc:left-1/2 pc:top-[120px] pc:transform pc:-translate-x-1/2 mobile:w-[567px] mobile:h-[209px] pc:w-[567px] pc:h-[209px]"> */}
         {/* Glow Effect */}
@@ -121,4 +123,9 @@ export default function Content3() {
       </div>
     </section>
   );
-}
+});
+
+Content3.displayName = 'Content3';
+
+export default Content3;
+

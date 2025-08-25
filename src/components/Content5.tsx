@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import LandingButton from './LandingButton';
 import { FooterLinkType, SocialLinkType } from '@/types';
+import { forwardRef } from 'react';
 
 const pillars = [
   {
@@ -51,9 +52,9 @@ interface Content5Props {
   handleSocialLinks: (type: SocialLinkType) => void;
 }
 
-export default function Content5({ handleFooterLinks, handleSocialLinks }: Content5Props) {
+const Content5 = forwardRef<HTMLElement, Content5Props>(({ handleFooterLinks, handleSocialLinks }, ref) => {
   return (
-    <section className="relative w-full  pc:h-[734px] pc:px-[6.5%] pc:pt-[6.5%] pc:pb-[1%]  bg-gradient-to-b from-primary via-primary to-[#212121] ">
+    <section ref={ref} className="relative w-full  pc:h-[734px] pc:px-[6.5%] pc:pt-[6.5%] pc:pb-[1%]  bg-gradient-to-b from-primary via-primary to-[#212121] ">
       {/* Content */}
       <div className="relative flex h-full items-center justify-center mobile:px-6 mobile:pt-20 mobile:pb-[16px]">
         <div className="flex w-full  pc:max-w-[1200px] flex-col items-center mobile:gap-6 pc:gap-16">
@@ -284,4 +285,8 @@ export default function Content5({ handleFooterLinks, handleSocialLinks }: Conte
       </div>
     </section>
   );
-}
+});
+
+Content5.displayName = 'Content5';
+
+export default Content5;

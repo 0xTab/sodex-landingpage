@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { forwardRef } from 'react';
 // import { useState } from 'react';
 
 // Feature data for the Figma design
@@ -59,9 +59,11 @@ const features = [
   }
 ];
 
-export default function Content2() {
+interface Content2Props {
+  isFinalStep?: boolean;
+}
 
-  const [isFinalStep, setIsFinalStep] = useState(true);
+const Content2 = forwardRef<HTMLElement, Content2Props>(({ isFinalStep = true }, ref) => {
 
 
   const getImagSize = (finalStep: boolean): { width: number, height: number } => {
@@ -72,7 +74,7 @@ export default function Content2() {
   }
 
   return (
-    <section className="w-full mobile:h-[940px]  pc:h-[866px] pc:px-[6.5%] pc:py-[6.5%] overflow-hidden bg-gradient-to-b from-primary via-primary/95 to-[#212121">
+    <section ref={ref} className="w-full mobile:h-[940px]  pc:h-[866px] pc:px-[6.5%] pc:py-[6.5%] overflow-hidden bg-gradient-to-b from-primary via-primary/95 to-[#212121]">
       {/* Content */}
       <div className="relative z-10 flex h-full items-start justify-center mobile:px-10 mobile:pt-[30px]">
         <div className="flex w-full mobile:max-w-[313px] pc:max-w-[1200px] flex-col items-center mobile:gap-4 pc:gap-[52px]">
@@ -173,5 +175,9 @@ export default function Content2() {
       </div>
     </section>
   );
-}
+});
+
+Content2.displayName = 'Content2';
+
+export default Content2;
 

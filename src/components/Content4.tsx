@@ -1,7 +1,7 @@
 'use client'
 import AnimationBox from './AnimationBox';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 
 
 const TEXT_CONTENT = [
@@ -11,7 +11,7 @@ const TEXT_CONTENT = [
   'Unified account across guest chains — same address and keys to access all DApps.'
 ]
 
-export default function Content4() {
+const Content4 = forwardRef<HTMLElement>((props, ref) => {
   const [currentStep, setCurrentStep] = useState(1);
   const totalSteps = TEXT_CONTENT.length;
 
@@ -19,7 +19,7 @@ export default function Content4() {
     setCurrentStep(step);
   };
   return (
-    <section className="w-full mobile:h-[620px] pc:min-h-screen  pc:px-[6.5%] pc:py-[6.5%] overflow-hidden bg-gradient-to-b from-primary via-primary to-[#212121]">
+    <section ref={ref}  className="w-full mobile:h-[620px]   pc:px-[6.5%] pc:py-[6.5%] overflow-hidden bg-gradient-to-b from-primary via-primary to-[#212121]">
       {/* Content */}
       <div className="relative z-10 flex h-full pc:items-center justify-center mobile:px-4 mobile:pt-20 ">
         <div className="flex w-full mobile:max-w-[361px] pc:max-w-[1200px] flex-col items-center mobile:gap-4 pc:gap-12">
@@ -82,4 +82,8 @@ export default function Content4() {
       </div>
     </section>
   );
-}
+});
+
+Content4.displayName = 'Content4';
+
+export default Content4;

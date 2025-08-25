@@ -13,7 +13,7 @@ const Header: React.FC = () => {
       <div className="mobile:block pc:hidden">
    
         {/* Mobile Header */}
-        <div className="w-full px-5 pt-5 pb-0">
+        <div className="w-full px-5 pt-5 pb-0 fixed top-0 left-0 right-0 z-50">
           <div className="flex h-[44px] px-6 items-center gap-8 rounded-[99px] border border-default bg-white/10 backdrop-blur-[6px]">
             {/* Logo Section */}
             <div className="flex items-center gap-[2.33px]">
