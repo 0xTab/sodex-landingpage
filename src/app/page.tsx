@@ -7,19 +7,21 @@ import Content5 from "@/components/Content5";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-primary">
-      {/* Header */}
-      <Header />
+    <div className="min-h-screen bg-primary relative">
+      {/* Mobile-First Layout */}
+      <div className="mobile:w-[393px] mobile:mx-auto pc:w-full">
+        {/* Header */}
+        <Header />
 
-      {/* Content Sections */}
-      <main>
-        <Content1 />
-        <Content2 />
-        <Content3 />
-        <Content4 />
-        <Content5 />
-        {/* Additional content sections will be added here */}
-      </main>
+        {/* Content Sections */}
+        <main className="relative">
+          <Content1 />
+          <Content2 />
+          <Content3 />
+          <Content4 />
+          <Content5 />
+        </main>
+      </div>
     </div>
   )
 }
