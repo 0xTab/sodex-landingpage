@@ -51,12 +51,12 @@ export default function Content3() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10  w-full flex h-full items-center justify-center mobile:px-4 mobile:pt-20 pc:px-[120px] ">
-        <div className="flex w-full mobile:max-w-[361px] flex-col items-center mobile:gap-16 pc:gap-24 ">
+      <div className="relative z-10  w-full flex h-full items-center justify-center mobile:px-[24px] mobile:py-20  pc:px-[120px] ">
+        <div className="flex w-full  flex-col items-center mobile:gap-[29px] pc:gap-24 ">
 
           {/* Title */}
-          <div className="text-center mobile:pt-[255px]">
-            <h2 className="text-white mobile:text-[28px] pc:text-4xl font-latoBold leading-normal mobile:max-w-[260px] pc:max-w-4xl mx-auto">
+          <div className="text-center">
+            <h2 className="text-white mobile:text-[28px] pc:text-4xl font-latoBold leading-normal pc:max-w-4xl mx-auto">
               Seamless Experience
             </h2>
           </div>
@@ -80,7 +80,7 @@ export default function Content3() {
                 </div>
               </div>
 
-              <div className="relative rounded-md overflow-hidden mobile:aspect-[45/26] pc:aspect-[45/26]">
+              <div className="relative rounded-md overflow-hidden mobile:aspect-[313/180] pc:aspect-[45/26]">
                 <Image
                   src="/img/home/content3-inner1.webp"
                   alt="SoSoValue Research Terminal Interface"
@@ -107,7 +107,7 @@ export default function Content3() {
                 </div>
               </div>
 
-              <div className="relative rounded-md overflow-hidden mobile:aspect-[45/26] pc:aspect-[45/26]">
+              <div className="relative rounded-md overflow-hidden mobile:aspect-[313/180] pc:aspect-[45/26]">
                 <Image
                   src="/img/home/content3-inner2.webp"
                   alt="SoDEX Decentralized Exchange Interface"
