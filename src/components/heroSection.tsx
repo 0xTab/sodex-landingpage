@@ -33,7 +33,7 @@ export default function HeroSection() {
             
             {/* Vision Subtitle */}
             <div className="text-center">
-              <p className="text-secondary mobile:text-sm pc:text-lg mobile:max-w-[313px] pc:max-w-2xl mx-auto leading-relaxed">
+              <p className="text-secondary mobile:text-sm pc:text-lg mobile:max-w-[313px] pc:max-w-[554px] mx-auto leading-relaxed">
                 SoDEX devotes to bridge the global information and asset gap Focused solely on real user needs in the real world.
               </p>
             </div>
