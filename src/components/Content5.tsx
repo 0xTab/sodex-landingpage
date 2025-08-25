@@ -3,9 +3,6 @@ import Image from 'next/image';
 import LandingButton from './LandingButton';
 import { FooterLinkType, SocialLinkType } from '@/types';
 
-
-
-
 const pillars = [
   {
     letter: "S",

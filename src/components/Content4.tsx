@@ -8,13 +8,12 @@ const TEXT_CONTENT = [
   'Unified account across guest chains — same address and keys to access all DApps.',
   'Spot and futures order-book DEX run on two parallel app‑chains to maximize on‑chain trading performance.',
   'The host chain provides shared security, and settlement finality to facilitate interoperability among DApps.',
-  'nified account across guest chains — same address and keys to access all DApps.'
-  
+  'Unified account across guest chains — same address and keys to access all DApps.'
 ]
 
 export default function Content4() {
   const [currentStep, setCurrentStep] = useState(1);
-  const totalSteps = 3; // 假设有3个步骤，您可以根据需要调整
+  const totalSteps = TEXT_CONTENT.length;
 
   const handleStepChange = (step: number) => {
     setCurrentStep(step);
@@ -36,7 +35,7 @@ export default function Content4() {
           </div>
 
           {/* Navigation Arrows */}
-          <div className="mobile:block pc:hidden flex-row w-full justify-between items-center mobile:px-6 pc:px-0 !flex  mobile:absolute mobile:top-1/2 mobile:left-0 mobile:right-0 mobile:-translate-y-1/2 mobile:z-20">
+          <div className="flex-row w-full justify-between items-center mobile:px-6 pc:px-0 flex pc:hidden  mobile:absolute mobile:top-1/2 mobile:left-0 mobile:right-0 mobile:-translate-y-1/2 mobile:z-20">
             <button 
               onClick={() => handleStepChange(currentStep > 1 ? currentStep - 1 : totalSteps)}
               className="p-2"

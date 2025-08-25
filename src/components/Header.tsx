@@ -78,7 +78,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
+      {/* {isMobileMenuOpen && (
         <div className="mobile:block pc:hidden absolute top-full left-0 right-0 mt-2 mx-5 bg-white/10 backdrop-blur-xl border border-default rounded-lg p-4 z-50">
           <nav className="flex flex-col gap-2">
             <div className="flex items-center gap-2 px-3 py-2 cursor-pointer hover:bg-white/5 transition-colors rounded">
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
             </div>
           </nav>
         </div>
-      )}
+      )} */}
     </>
   );
 };
