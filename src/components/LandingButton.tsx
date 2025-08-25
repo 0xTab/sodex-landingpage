@@ -21,7 +21,7 @@ const LandingButton: React.FC<ButtonProps> = ({
       onClick={onClick}
       disabled={disabled}
     >
-      <div className="text-center justify-center text-white mobile:text-base pc:text-lg font-latoRegular">
+      <div className="text-center justify-center text-white mobile:text-base pc:text-lg mobile:px-[24px]  font-latoRegular">
         {text}
       </div>  
     </button>

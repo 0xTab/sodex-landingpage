@@ -11,39 +11,7 @@ const Header: React.FC = () => {
     <>
       {/* Status Bar - Mobile Only */}
       <div className="mobile:block pc:hidden">
-        {/* Status Bar */}
-        <div className="w-full h-[59px] relative bg-primary">
-          {/* Dynamic Island */}
-          <div className="absolute left-1/2 top-[11px] transform -translate-x-1/2 w-[125px] h-[37px] bg-black rounded-[18px]"></div>
-
-          {/* Time */}
-          <div className="absolute left-[45px] top-[19px] w-[54px] h-[20px]">
-            <span className="text-white text-center font-bold text-[17px] leading-normal tracking-[-0.4px]">9:41</span>
-          </div>
-
-          {/* Status Icons */}
-          <div className="absolute right-[37px] top-[23px] flex items-center gap-[7.33px]">
-            {/* Signal */}
-            <div className="flex items-end gap-[1px] h-[14px]">
-              <div className="w-[3px] h-[4px] bg-white rounded-[1px]"></div>
-              <div className="w-[3px] h-[7px] bg-white rounded-[1px]"></div>
-              <div className="w-[3px] h-[10px] bg-white rounded-[1px]"></div>
-              <div className="w-[3px] h-[14px] bg-white rounded-[1px]"></div>
-            </div>
-
-            {/* WiFi */}
-            <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" clipRule="evenodd" d="M9.83693 3.89168C12.3035 3.89179 14.6757 4.84944 16.4633 6.5667C16.5979 6.69928 16.8131 6.69761 16.9457 6.56295L18.2324 5.25075C18.2996 5.18245 18.337 5.08994 18.3364 4.99369C18.3359 4.89743 18.2974 4.80537 18.2295 4.73787C13.5375 0.194403 6.13548 0.194403 1.44363 4.73787C1.37563 4.80532 1.3371 4.89735 1.33641 4.99361C1.33572 5.08986 1.37318 5.1824 1.44027 5.25075L2.72737 6.56295C2.85987 6.69781 3.07521 6.69949 3.20972 6.5667C4.99762 4.84933 7.37008 3.89168 9.83693 3.89168ZM9.83693 8.16076C11.1921 8.16068 12.499 8.66966 13.5035 9.58882C13.6394 9.71926 13.8534 9.71644 13.9859 9.58244L15.2712 8.27024C15.3389 8.20141 15.3764 8.10804 15.3754 8.01101C15.3745 7.91399 15.335 7.82141 15.266 7.75398C12.2069 4.8787 7.46946 4.8787 4.41051 7.75398C4.34141 7.8214 4.30191 7.91403 4.301 8.01109C4.30009 8.10815 4.33778 8.20151 4.40562 8.27024L5.69051 9.58244C5.823 9.71644 6.037 9.71926 6.17288 9.58882C7.17677 8.67027 8.48262 8.16133 9.83693 8.16076ZM12.4115 11.033C12.4135 11.1303 12.3757 11.2241 12.3069 11.2923L10.0836 13.5594C10.0185 13.626 9.92961 13.6635 9.83693 13.6635C9.74424 13.6635 9.65533 13.626 9.59023 13.5594L7.36651 11.2923C7.29781 11.2241 7.26001 11.1302 7.26211 11.033C7.26411 10.9357 7.30581 10.8435 7.37731 10.7783C8.79711 9.56482 10.8767 9.56482 12.2965 10.7783C12.368 10.8436 12.4096 10.9357 12.4115 11.033Z" fill="white" />
-            </svg>
-
-            {/* Battery */}
-            <div className="relative w-[24px] h-[12px] border border-white/40 rounded-[2.67px]">
-              <div className="absolute right-[2px] top-[2px] w-[10px] h-[8px] bg-white rounded-[1px]"></div>
-              <div className="absolute right-[-2px] top-[4px] w-[1px] h-[4px] bg-white/40 rounded-r-[1px]"></div>
-            </div>
-          </div>
-        </div>
-
+   
         {/* Mobile Header */}
         <div className="w-full px-5 pt-5 pb-0">
           <div className="flex h-[44px] px-6 items-center gap-8 rounded-[99px] border border-default bg-white/10 backdrop-blur-[6px]">
@@ -59,9 +27,7 @@ const Header: React.FC = () => {
                 className="w-8 h-8 flex items-center justify-center"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17.5 9.375V10.625C17.5 10.7908 17.4342 10.9497 17.3169 11.0669C17.1997 11.1842 17.0408 11.25 16.875 11.25H3.125C2.95924 11.25 2.80027 11.1842 2.68306 11.0669C2.56585 10.9497 2.5 10.7908 2.5 10.625V9.375C2.5 9.20924 2.56585 9.05027 2.68306 8.93306C2.80027 8.81585 2.95924 8.75 3.125 8.75H16.875C17.0408 8.75 17.1997 8.81585 17.3169 8.93306C17.4342 9.05027 17.5 9.20924 17.5 9.375ZM16.875 13.75H3.125C2.95924 13.75 2.80027 13.8158 2.68306 13.9331C2.56585 14.0503 2.5 14.2092 2.5 14.375V15.625C2.5 15.7908 2.56585 15.9497 2.68306 16.0669C2.80027 16.1842 2.95924 16.25 3.125 16.25H16.875C17.0408 16.25 17.1997 16.1842 17.3169 16.0669C17.4342 15.9497 17.5 15.7908 17.5 15.625V14.375C17.5 14.2092 17.4342 14.0503 17.3169 13.9331C17.1997 13.8158 17.0408 13.75 16.875 13.75ZM16.875 3.75H3.125C2.95924 3.75 2.80027 3.81585 2.68306 3.93306C2.56585 4.05027 2.5 4.20924 2.5 4.375V5.625C2.5 5.79076 2.56585 5.94973 2.68306 6.06694C2.80027 6.18415 2.95924 6.25 3.125 6.25H16.875C17.0408 6.25 17.1997 6.18415 17.3169 6.06694C17.4342 5.94973 17.5 5.79076 17.5 5.625V4.375C17.5 4.20924 17.4342 4.05027 17.3169 3.93306C17.1997 3.81585 17.0408 3.75 16.875 3.75Z" fill="white" />
-                </svg>
+                <Image src="/icons/menu-icon.svg" alt="Menu" width={32} height={32} />
               </button>
             </div>
           </div>

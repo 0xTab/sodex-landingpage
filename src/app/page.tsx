@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-primary relative">
       {/* Mobile-First Layout */}
-      <div className="mobile:w-[393px] mobile:mx-auto pc:w-full">
+      <div className=" mobile:mx-auto pc:w-full">
         {/* Header */}
         <Header />
 

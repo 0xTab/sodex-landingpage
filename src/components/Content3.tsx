@@ -6,7 +6,7 @@ export default function Content3() {
       {/* Infinity Animation */}
       <div className="absolute mobile:left-[-111px] mobile:top-[255px] pc:left-1/2 pc:top-[120px] pc:transform pc:-translate-x-1/2 mobile:w-[567px] mobile:h-[209px] pc:w-[567px] pc:h-[209px]">
         {/* Glow Effect */}
-        {/* <svg className="mobile:w-[393px] mobile:h-[627px] pc:w-[567px] pc:h-[143px] mobile:left-0 mobile:top-[33px] pc:left-0 pc:top-[33px] absolute rounded-full opacity-40 blur-[120px]" viewBox="0 0 393 627" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {/* <svg className=" mobile:h-[627px] pc:w-[567px] pc:h-[143px] mobile:left-0 mobile:top-[33px] pc:left-0 pc:top-[33px] absolute rounded-full opacity-40 blur-[120px]" viewBox="0 0 393 627" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(196.5 313.5) rotate(90) scale(71.5993 283.5)">
               <stop stopColor="#CF4200"/>
