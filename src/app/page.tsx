@@ -7,7 +7,6 @@ import Content4 from "@/components/Content4";
 import Content5 from "@/components/Content5";
 import { FooterLinkType, SocialLinkType } from "@/types";
 
-
 const Home = () => {
   const handleFooterLinks = (type: FooterLinkType) => {
     console.log('handleFooterLinks', type);
@@ -27,13 +26,26 @@ const Home = () => {
 
         {/* Content Sections */}
         <main className="pc:relative mobile:hidden">
-          <HeroSection />
-          <div>
-            <Content2 />
-            <Content3 />
-            <Content4 />
-            <Content5 handleFooterLinks={handleFooterLinks} handleSocialLinks={handleSocialLinks} />
+          {/* a层：HeroSection - 固定在底部，高度734px */}
+          <div className="fixed bottom-0 left-0 right-0 z-10">
+            <HeroSection />
           </div>
+          
+          {/* b层：滚动内容区域 - 使用sticky定位 */}
+          <div className="sticky top-0 z-20">
+            {/* 透明区域：与a层高度相同 */}
+            <div className="h-[734px] bg-transparent"></div>
+            
+            {/* 黑色背景内容区域 */}
+            <div className="bg-black">
+              <Content2 />
+              <Content3 />
+              <Content4 />
+              <Content5 handleFooterLinks={handleFooterLinks} handleSocialLinks={handleSocialLinks} />
+            </div>
+          </div>
+          
+
         </main>
 
         <main className="pc:hidden mobile:relative">
