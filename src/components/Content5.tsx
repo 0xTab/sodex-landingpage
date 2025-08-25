@@ -1,5 +1,10 @@
+'use client'
 import Image from 'next/image';
 import LandingButton from './LandingButton';
+import { FooterLinkType, SocialLinkType } from '@/types';
+
+
+
 
 const pillars = [
   {
@@ -44,15 +49,20 @@ const pillars = [
   }
 ];
 
-export default function Content5() {
+interface Content5Props {
+  handleFooterLinks: (type: FooterLinkType) => void;
+  handleSocialLinks: (type: SocialLinkType) => void;
+}
+
+export default function Content5({ handleFooterLinks, handleSocialLinks }: Content5Props) {
   return (
-    <section className="relative w-full mobile:min-h-[1136px] pc:h-[734px] pc:px-[6.5%] pc:pt-[6.5%] pc:pb-[1%]  bg-gradient-to-b from-primary via-primary to-[#212121] ">
+    <section className="relative w-full  pc:h-[734px] pc:px-[6.5%] pc:pt-[6.5%] pc:pb-[1%]  bg-gradient-to-b from-primary via-primary to-[#212121] ">
       {/* Content */}
-      <div className="relative flex h-full items-center justify-center mobile:px-6 mobile:py-20">
-        <div className="flex w-full mobile:max-w-[345px] pc:max-w-[1200px] flex-col items-center mobile:gap-6 pc:gap-16">
+      <div className="relative flex h-full items-center justify-center mobile:px-6 mobile:pt-20 mobile:pb-[16px]">
+        <div className="flex w-full  pc:max-w-[1200px] flex-col items-center mobile:gap-6 pc:gap-16">
 
           {/* Mobile Layout - Stacked */}
-          <div className="mobile:block pc:hidden flex flex-col mobile:gap-2 w-full">
+          <div className="mobile:block pc:hidden flex flex-col mobile:space-y-[8px] w-full">
             {pillars.map((pillar, index) => (
               <div key={index} className="relative flex mobile:h-[160px] mobile:p-6 flex-col justify-between items-start rounded-lg bg-white/[0.04] overflow-hidden">
                 {/* Icon */}
@@ -188,10 +198,12 @@ export default function Content5() {
             </div>
 
 
-            {/* Footer Links */}
-            <div className="flex justify-between items-center mobile:gap-4 mobile:mt-4 w-full">
+            {/* Footer Links - Desktop */}
+            <div className="mobile:hidden flex justify-between items-center mobile:gap-4 mobile:mt-4 w-full">
               <div className="flex items-center mobile:gap-4 pc:gap-6">
-                <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors">
+                <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors"
+                  onClick={() => handleFooterLinks('whitepaper')}
+                >
                   WhitePaper
                 </span>
 
@@ -199,19 +211,72 @@ export default function Content5() {
 
               {/* Social Icons */}
               <div className="flex items-center justify-center mobile:gap-4 pc:gap-6">
-                <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors">
+                <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors"
+                  onClick={() => handleFooterLinks('terms')}
+                >
                   Terms of Service
                 </span>
-                <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors">
+                <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors"
+                  onClick={() => handleFooterLinks('privacy')}
+                >
                   Privacy Policy
                 </span>
                 {/* X (Twitter) */}
-                <svg className="mobile:w-4 mobile:h-4 pc:w-5 pc:h-5 text-white cursor-pointer hover:text-brand transition-colors" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="mobile:w-4 mobile:h-4 pc:w-5 pc:h-5 text-white cursor-pointer hover:text-brand transition-colors" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  onClick={() => handleSocialLinks('x')}
+                >
                   <path d="M9.61708 7.0812L13.9883 2H12.9524L9.15693 6.4119L6.12548 2H2.62903L7.21323 8.6716L2.62903 14H3.66493L7.67308 9.34085L10.8745 14H14.371L9.61708 7.0812ZM8.19828 8.7304L7.73383 8.06605L4.03813 2.7798H5.62923L8.61168 7.04595L9.07613 7.7103L12.9529 13.2556H11.3618L8.19828 8.7304Z" fill="currentColor" />
                 </svg>
 
                 {/* Telegram */}
-                <svg className="mobile:w-4 mobile:h-4 pc:w-5 pc:h-5 text-white cursor-pointer hover:text-brand transition-colors" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className="mobile:w-4 mobile:h-4 pc:w-5 pc:h-5 text-white cursor-pointer hover:text-brand transition-colors" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  onClick={() => handleSocialLinks('telegram')}
+                >
+                  <path d="M2.22125 7.84703C5.5965 6.37683 7.84663 5.40748 8.97171 4.93918C12.1878 3.60192 12.8552 3.36967 13.2911 3.36189C13.387 3.36026 13.6004 3.38396 13.7397 3.49665C13.8555 3.59161 13.8881 3.72004 13.9043 3.81012C13.9188 3.9002 13.9387 4.1055 13.9225 4.26576C13.7488 6.09628 12.9945 10.5384 12.6111 12.5887C12.4501 13.4562 12.1299 13.7471 11.8206 13.7755C11.1477 13.8373 10.6376 13.3312 9.98643 12.9045C8.96807 12.2365 8.39291 11.8208 7.40349 11.1691C6.26032 10.4159 7.00191 10.0019 7.65308 9.32538C7.82311 9.1483 10.7859 6.45406 10.842 6.20969C10.8492 6.17912 10.8565 6.06517 10.7878 6.00512C10.7208 5.94488 10.6213 5.9655 10.5489 5.98178C10.4458 6.00493 8.81972 7.08082 5.66515 9.20925C5.20391 9.52652 4.78608 9.68117 4.40985 9.67303C3.99744 9.66417 3.20161 9.43933 2.61013 9.24724C1.88661 9.01155 1.30957 8.88692 1.36021 8.48663C1.38554 8.27825 1.67318 8.06499 2.22125 7.84703Z" fill="currentColor" />
+                </svg>
+              </div>
+            </div>
+            
+            {/* Footer Links - Mobile */}
+            <div className="pc:hidden flex flex-col gap-4 items-center mobile:gap-4 mobile:mt-4 w-full">
+              <div className="flex items-center mobile:gap-4 pc:gap-6">
+                <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors"
+                  onClick={() => handleFooterLinks('whitepaper')}
+                >
+                  WhitePaper
+                </span>
+                <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors"
+                  onClick={() => handleFooterLinks('terms')}
+                >
+                  Terms of Service
+                </span>
+                <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors"
+                  onClick={() => handleFooterLinks('privacy')}
+                >
+                  Privacy Policy
+                </span>
+                <span className="text-secondary font-latoRegular mobile:text-xs pc:text-sm cursor-pointer hover:text-white transition-colors"
+                  onClick={() => handleFooterLinks('about')}
+                >
+                  About SoDEX
+                </span>
+
+              </div>
+
+              {/* Social Icons */}
+              <div className="flex items-center justify-center mobile:gap-4 pc:gap-6">
+      
+                {/* X (Twitter) */}
+                <svg className="mobile:w-4 mobile:h-4 pc:w-5 pc:h-5 text-white cursor-pointer hover:text-brand transition-colors" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  onClick={() => handleSocialLinks('x')}
+                >
+                  <path d="M9.61708 7.0812L13.9883 2H12.9524L9.15693 6.4119L6.12548 2H2.62903L7.21323 8.6716L2.62903 14H3.66493L7.67308 9.34085L10.8745 14H14.371L9.61708 7.0812ZM8.19828 8.7304L7.73383 8.06605L4.03813 2.7798H5.62923L8.61168 7.04595L9.07613 7.7103L12.9529 13.2556H11.3618L8.19828 8.7304Z" fill="currentColor" />
+                </svg>
+
+                {/* Telegram */}
+                <svg className="mobile:w-4 mobile:h-4 pc:w-5 pc:h-5 text-white cursor-pointer hover:text-brand transition-colors" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  onClick={() => handleSocialLinks('telegram')}
+                >
                   <path d="M2.22125 7.84703C5.5965 6.37683 7.84663 5.40748 8.97171 4.93918C12.1878 3.60192 12.8552 3.36967 13.2911 3.36189C13.387 3.36026 13.6004 3.38396 13.7397 3.49665C13.8555 3.59161 13.8881 3.72004 13.9043 3.81012C13.9188 3.9002 13.9387 4.1055 13.9225 4.26576C13.7488 6.09628 12.9945 10.5384 12.6111 12.5887C12.4501 13.4562 12.1299 13.7471 11.8206 13.7755C11.1477 13.8373 10.6376 13.3312 9.98643 12.9045C8.96807 12.2365 8.39291 11.8208 7.40349 11.1691C6.26032 10.4159 7.00191 10.0019 7.65308 9.32538C7.82311 9.1483 10.7859 6.45406 10.842 6.20969C10.8492 6.17912 10.8565 6.06517 10.7878 6.00512C10.7208 5.94488 10.6213 5.9655 10.5489 5.98178C10.4458 6.00493 8.81972 7.08082 5.66515 9.20925C5.20391 9.52652 4.78608 9.68117 4.40985 9.67303C3.99744 9.66417 3.20161 9.43933 2.61013 9.24724C1.88661 9.01155 1.30957 8.88692 1.36021 8.48663C1.38554 8.27825 1.67318 8.06499 2.22125 7.84703Z" fill="currentColor" />
                 </svg>
               </div>

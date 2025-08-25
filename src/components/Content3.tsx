@@ -4,7 +4,7 @@ export default function Content3() {
   return (
     <section className="w-full mobile:h-[852px] pc:min-h-[883px] pc:px-[6.5%] pc:py-[6.5%] overflow-hidden bg-gradient-to-b from-primary via-primary/95 to-[#212121]">
       {/* Infinity Animation */}
-      <div className="absolute mobile:left-[-111px] mobile:top-[255px] pc:left-1/2 pc:top-[120px] pc:transform pc:-translate-x-1/2 mobile:w-[567px] mobile:h-[209px] pc:w-[567px] pc:h-[209px]">
+      {/* <div className="absolute mobile:left-[-111px] mobile:top-[255px] pc:left-1/2 pc:top-[120px] pc:transform pc:-translate-x-1/2 mobile:w-[567px] mobile:h-[209px] pc:w-[567px] pc:h-[209px]"> */}
         {/* Glow Effect */}
         {/* <svg className=" mobile:h-[627px] pc:w-[567px] pc:h-[143px] mobile:left-0 mobile:top-[33px] pc:left-0 pc:top-[33px] absolute rounded-full opacity-40 blur-[120px]" viewBox="0 0 393 627" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -48,7 +48,7 @@ export default function Content3() {
             </g>
           </svg>
         </div> */}
-      </div>
+      {/* </div> */}
 
       {/* Content */}
       <div className="relative z-10  w-full flex h-full items-center justify-center mobile:px-[24px] mobile:py-20  pc:px-[120px] ">
