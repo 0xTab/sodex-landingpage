@@ -20,6 +20,12 @@ const Home = () => {
   const isScrolling = useRef(false);
   const [currentSection, setCurrentSection] = useState(0); // 0: Hero, 1: Content2, 2: Content3, 3: Content4, 4: Content5
   
+  // Content2 的 isFinalStep 状态
+  // 默认为 false，表示初始状态（显示完整布局）
+  // 当向下滚动时，先切换到 true（显示简化布局），再滚动到下一个元素
+  // 当向上滚动时，先切换到 false（显示完整布局），再滚动到上一个元素
+  const [content2IsFinalStep, setContent2IsFinalStep] = useState(false);
+  
   const handleFooterLinks = (type: FooterLinkType) => {
     console.log('handleFooterLinks', type);
   }
@@ -42,7 +48,6 @@ const Home = () => {
         behavior: 'smooth'
       });
     } else {
-      // 滚动到对应的Content组件
       const sectionRefs = [content2Ref, content3Ref, content4Ref, content5Ref];
       const targetRef = sectionRefs[sectionIndex-1];
       targetRef.current?.scrollIntoView({
@@ -59,31 +64,41 @@ const Home = () => {
   // 滚动事件监听
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
-
       e.preventDefault();
-      console.log('currentSection', currentSection);
+      console.log('currentSection', currentSection, 'content2IsFinalStep', content2IsFinalStep);
       
       // 向下滚动
       if (e.deltaY > 0) {
+        // 如果在 Content2 区域且 isFinalStep 为 false，先切换到 true
+        if (currentSection === 1 && !content2IsFinalStep) {
+          setContent2IsFinalStep(true);
+          return;
+        }
+        
         if (currentSection < 4) {
           scrollToSection(currentSection + 1);
         }
       }
       // 向上滚动
       else if (e.deltaY < 0) {
+        // 如果在 Content2 区域且 isFinalStep 为 true，先切换到 false
+        if (currentSection === 1 && content2IsFinalStep) {
+          setContent2IsFinalStep(false);
+          return;
+        }
+        
         if (currentSection > 0) {
           scrollToSection(currentSection - 1);
         }
       }
     };
 
-    // 添加滚动事件监听
     window.addEventListener('wheel', handleWheel, { passive: false });
     
     return () => {
       window.removeEventListener('wheel', handleWheel);
     };
-  }, [currentSection]);
+  }, [currentSection, content2IsFinalStep]);
 
 
   return (
@@ -105,7 +120,7 @@ const Home = () => {
             {/* 透明区域：与a层高度相同 */}
             <div className="h-[800px] bg-transparent"></div>
             <div className="bg-black">
-              <Content2 ref={content2Ref} />
+              <Content2 ref={content2Ref} isFinalStep={content2IsFinalStep} />
               <Content3 ref={content3Ref} />
               <Content4 ref={content4Ref} />
               <Content5 ref={content5Ref} handleFooterLinks={handleFooterLinks} handleSocialLinks={handleSocialLinks} />

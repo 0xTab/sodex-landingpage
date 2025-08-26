@@ -10,8 +10,8 @@ import { forwardRef } from 'react';
 // Feature Card Component
 const FeatureCard = ({ feature }: { feature: typeof features[0] }) => {
   return (
-    <div className="flex items-center mobile:gap-4 pc:gap-[16px] mobile:py-0 pc:py-5 rounded-md">
-      <div className="flex-shrink-0">
+         <div className="flex items-center mobile:gap-4 pc:gap-[16px] mobile:py-0 pc:py-5 rounded-md transition-all duration-1000 ease-in-out hover:scale-105">
+       <div className="flex-shrink-0 transition-transform duration-1000 ease-in-out">
         {feature.icon}
       </div>
       <div className="flex-1">
@@ -63,8 +63,10 @@ interface Content2Props {
   isFinalStep?: boolean;
 }
 
-const Content2 = forwardRef<HTMLElement, Content2Props>(({ isFinalStep = true }, ref) => {
+const Content2 = forwardRef<HTMLElement, Content2Props>(({ isFinalStep = false }, ref) => {
 
+  // 调试信息
+  console.log('Content2 isFinalStep:', isFinalStep);
 
   const getImagSize = (finalStep: boolean): { width: number, height: number } => {
     if (finalStep) {
@@ -74,7 +76,7 @@ const Content2 = forwardRef<HTMLElement, Content2Props>(({ isFinalStep = true },
   }
 
   return (
-    <section ref={ref} className="w-full mobile:h-[940px]  pc:h-[866px] pc:px-[6.5%] pc:py-[6.5%] overflow-hidden bg-gradient-to-b from-primary via-primary/95 to-[#212121]">
+    <section ref={ref} id='content2' className="w-full mobile:h-[940px]  pc:h-[866px] pc:px-[6.5%] pc:py-[6.5%] overflow-hidden bg-gradient-to-b from-primary via-primary/95 to-[#212121]">
       {/* Content */}
       <div className="relative z-10 flex h-full items-start justify-center mobile:px-10 mobile:pt-[30px]">
         <div className="flex w-full mobile:max-w-[313px] pc:max-w-[1200px] flex-col items-center mobile:gap-4 pc:gap-[52px]">
@@ -119,22 +121,28 @@ const Content2 = forwardRef<HTMLElement, Content2Props>(({ isFinalStep = true },
           </div>
 
           {/* Desktop Layout */}
-          <div className="mobile:hidden pc:block w-ful">
-            <div className={`flex justify-between gap-[1%] ${isFinalStep ? 'flex-row' : 'flex-col'} h-[450px]`}>
+          <div className="mobile:hidden pc:block w-full">
+                         <div className={`flex justify-between gap-[1%] transition-all duration-[500ms] ease-in-out delay-[200ms] ${isFinalStep ? 'flex-row' : 'flex-col'} h-[450px]`}>
               {/* Left Features */}
 
-              {
-                isFinalStep && <div className="flex flex-col justify-between py-[4%]">
-                  <FeatureCard feature={features[0]} />
-                  <FeatureCard feature={features[1]} />
-                </div>
-              }
+              <div className={`flex flex-col justify-between py-[4%] transition-all duration-[500ms] ease-in-out delay-[200ms] ${
+                isFinalStep 
+                  ? 'opacity-100 transform translate-x-0 w-auto' 
+                  : 'opacity-0 transform -translate-x-10 w-0 overflow-hidden'
+              }`}>
+                                 <div className={`transition-all duration-[500ms] ease-in-out delay-[200ms] ${isFinalStep ? 'transform translate-y-0' : 'transform translate-y-[5px]'}`}>
+                   <FeatureCard feature={features[0]} />
+                 </div>
+                 <div className={`transition-all duration-[500ms] ease-in-out delay-[200ms] ${isFinalStep ? 'transform translate-y-0' : 'transform translate-y-[5px]'}`}>
+                   <FeatureCard feature={features[1]} />
+                 </div>
+              </div>
 
 
               {/* Center - Trading Interface */}
               <div className="flex items-center justify-center">
                 <div
-                  className="relative rounded-lg shadow-2xl border-2 border-[#393939]"
+                  className="relative rounded-lg shadow-2xl border-2 border-[#393939] transition-all duration-[500ms] ease-in-out delay-[200ms]"
                   style={{
                     width: `${getImagSize(isFinalStep).width}px`,
                     height: `${getImagSize(isFinalStep).height}px`
@@ -145,7 +153,7 @@ const Content2 = forwardRef<HTMLElement, Content2Props>(({ isFinalStep = true },
                     alt="SoDEX Trading Interface"
                     width={getImagSize(isFinalStep).width}
                     height={getImagSize(isFinalStep).height}
-                    className="w-full h-auto object-cover rounded-lg"
+                    className="w-full h-auto object-cover rounded-lg transition-all duration-[500ms] ease-in-out delay-[200ms]"
                     priority
                   />
                 </div>
@@ -153,23 +161,33 @@ const Content2 = forwardRef<HTMLElement, Content2Props>(({ isFinalStep = true },
 
 
               {/* Right Features */}
-              {
-                isFinalStep && <div className="flex flex-col justify-between py-[4%]">
-                  <FeatureCard feature={features[2]} />
-                  <FeatureCard feature={features[3]} />
-                </div>
-              }
+              <div className={`flex flex-col justify-between py-[4%] transition-all duration-[500ms] ease-in-out delay-[200ms] ${
+                isFinalStep 
+                  ? 'opacity-100 transform translate-x-0 w-auto' 
+                  : 'opacity-0 transform translate-x-10 w-0 overflow-hidden'
+              }`}>
+                                 <div className={`transition-all duration-[500ms] ease-in-out delay-[200ms] ${isFinalStep ? 'transform translate-y-0' : 'transform translate-y-[5px]'}`}>
+                   <FeatureCard feature={features[2]} />
+                 </div>
+                 <div className={`transition-all duration-[500ms] ease-in-out delay-[200ms] ${isFinalStep ? 'transform translate-y-0' : 'transform translate-y-[5px]'}`}>
+                   <FeatureCard feature={features[3]} />
+                 </div>
+              </div>
             </div>
 
-            <div className='w-full flex flex-col items-center justify-center gap-[0.5%]'>
-              <h3 className='text-white text-[32px] font-latoBold leading-normal'>
-                SoDEX on ValueChain
-              </h3>
-              <p className='text-secondary text-[32px] font-latoRegular leading-normal'>
-                Infrastructure for the future.              
-              </p>
-
+            <div className={`w-full flex flex-col items-center justify-center gap-[0.5%] transition-all duration-3000 ease-out ${
+              isFinalStep 
+                ? 'opacity-100 transform translate-y-0' 
+                : 'opacity-0 transform translate-y-10'
+            }`}>
+                             <h3 className={`text-white text-[32px] font-latoBold leading-normal transition-all duration-3000 ease-out ${isFinalStep ? 'delay-2000' : 'delay-0'}`}>
+                 SoDEX on ValueChain
+               </h3>
+               <p className={`text-secondary text-[32px] font-latoRegular leading-normal transition-all duration-3000 ease-out ${isFinalStep ? 'delay-2500' : 'delay-0'}`}>
+                 Infrastructure for the future.
+               </p>
             </div>
+
           </div>
         </div>
       </div>
