@@ -37,7 +37,7 @@ export default function HeroSection() {
             {/* Vision Title */}
             <div className="text-center">
               <h1 className="text-white mobile:text-4xl pc:text-[56px] font-latoBold  leading-normal pc:max-w-[700px] mx-auto">
-                Building the Infrastructure for a New Financial Era
+                Enable crypto investment for the global masses
               </h1>
             </div>
             

@@ -35,7 +35,7 @@ content2的isFinalStep默认为false,
 向上滚动isFinalStep为false, 
 通过上下滚动切换状态
 
-，
+
 滚动检测判断，再次滚动的时候，当isFinalStep为false, 继续向上滚动则到上一个元素，
 滚动检测判断，再次滚动的时候，当isFinalStep为true,继续向下滚动则到下一个元素
 

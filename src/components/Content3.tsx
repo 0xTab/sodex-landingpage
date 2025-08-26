@@ -1,25 +1,19 @@
+"use client";  // 确保组件在客户端渲染
 import Image from 'next/image';
-import { forwardRef } from 'react';
+import { forwardRef, useState, useEffect } from 'react';
+import dynamic from "next/dynamic";
+import animationData from "./infinity.json";
 
 const Content3 = forwardRef<HTMLElement>((props, ref) => {
-
+  const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
   return (
-    <section ref={ref}  className="w-full mobile:h-[852px] pc:h-[883px] pc:px-[6.5%] pc:py-[6.5%] overflow-hidden bg-gradient-to-b from-primary via-primary/95 to-[#212121]">
-      {/* Infinity Animation */}
-      {/* <div className="absolute mobile:left-[-111px] mobile:top-[255px] pc:left-1/2 pc:top-[120px] pc:transform pc:-translate-x-1/2 mobile:w-[567px] mobile:h-[209px] pc:w-[567px] pc:h-[209px]"> */}
-        {/* Glow Effect */}
-        {/* <svg className=" mobile:h-[627px] pc:w-[567px] pc:h-[143px] mobile:left-0 mobile:top-[33px] pc:left-0 pc:top-[33px] absolute rounded-full opacity-40 blur-[120px]" viewBox="0 0 393 627" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(196.5 313.5) rotate(90) scale(71.5993 283.5)">
-              <stop stopColor="#CF4200"/>
-              <stop offset="1" stopColor="#CF4200" stopOpacity="0"/>
-            </radialGradient>
-          </defs>
-          <ellipse cx="196.5" cy="313.5" rx="283.5" ry="71.5993" fill="url(#paint0_radial)"/>
-        </svg> */}
+    <section ref={ref} className="w-full relative mobile:h-[852px] pc:h-[883px] pc:px-[6.5%] pc:py-[6.5%] overflow-hidden bg-gradient-to-b from-primary via-primary/95 to-[#212121]">
 
-        {/* Infinity Symbol Layers */}
-        {/* <div className="absolute mobile:left-[106px] mobile:top-[1px] pc:left-[106px] pc:top-[1px] mobile:w-[355px] mobile:h-[208px] pc:w-[355px] pc:h-[208px]">
+
+
+
+      {/* Infinity Symbol Layers */}
+      {/* <div className="absolute mobile:left-[106px] mobile:top-[1px] pc:left-[106px] pc:top-[1px] mobile:w-[355px] mobile:h-[208px] pc:w-[355px] pc:h-[208px]">
           <svg className="w-full h-full absolute" viewBox="0 0 355 209" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0_infinity" maskUnits="userSpaceOnUse" x="177" y="38" width="96" height="67">
               <rect x="177.723" y="38.092" width="94.7513" height="66.6315" fill="#8D00CF"/>
@@ -53,7 +47,7 @@ const Content3 = forwardRef<HTMLElement>((props, ref) => {
       {/* </div> */}
 
       {/* Content */}
-      <div className="relative z-10  w-full flex h-full items-center justify-center mobile:px-[24px] mobile:py-20  pc:px-[120px] ">
+      <div className="relative z-10 w-full flex h-full items-center justify-center mobile:px-[24px] mobile:py-20  pc:px-[120px] ">
         <div className="flex w-full  flex-col items-center mobile:gap-[29px] pc:gap-24 ">
 
           {/* Title */}
@@ -64,7 +58,7 @@ const Content3 = forwardRef<HTMLElement>((props, ref) => {
           </div>
 
           {/* Product Pillars Container */}
-          <div className="flex w-full mobile:flex-col mobile:gap-8 pc:gap-32 pc:flex-row">
+          <div className="relative flex w-full mobile:flex-col mobile:gap-8 pc:gap-32 pc:flex-row">
 
             {/* Know your investment targets Card */}
             <div className="flex flex-1 flex-col mobile:gap-6 pc:gap-8 mobile:p-4 pc:p-6 rounded-lg outline outline-1  outline-[rgba(255,255,255,0.16)] bg-[rgba(255,255,255,0.1)]  hover:bg-[rgba(255,255,255,0.08)] transition-all duration-300 backdrop-blur-xl">
@@ -91,6 +85,16 @@ const Content3 = forwardRef<HTMLElement>((props, ref) => {
                 />
 
               </div>
+            </div>
+
+            <div className='absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10'>
+              <Image src={'/animation/glow.svg'} width={567} height={290} alt='glow'/>
+              <Lottie animationData={animationData} loop={true} autoPlay   autoplay
+                  className="absolute top-0 left-0 w-full h-ful"
+                  rendererSettings={{
+                    preserveAspectRatio: "xMidYMid slice",
+                  }}
+                />=
             </div>
 
             {/* Invest in quality assets Card */}
